@@ -1,7 +1,8 @@
 import { useState } from 'react'
 //images
 import logo from './assets/logo.svg'
-import womanImage from './assets/hero-desktop.jpg'
+import womanImageDesk from './assets/hero-desktop.jpg'
+import womanImageMobile from './assets/hero-mobile.jpg'
 import patternTop from './assets/bg-pattern-desktop.svg'
 import buttonImg from './assets/icon-arrow.svg'
 import errorIcon from './assets/icon-error.svg'
@@ -9,6 +10,14 @@ import errorIcon from './assets/icon-error.svg'
 import './App.css'
 
 function App() {
+  /* const [womanImage,setWomanImg] = useState('./assets/hero-desktop.jpg')
+  window.onresize(()=>{
+    if (window.innerWidth<1024) {
+      setWomanImg('./assets/hero-mobile.jpg')
+    }else{
+      setWomanImg('./assets/hero-desktop.jpg')
+    }
+  }) */
   return (
     <>
       <div className='mainCont'>
@@ -47,7 +56,8 @@ function App() {
           </div>
         </div>
         <div className='imgCont'>
-          <img src={womanImage} id='womanImg' />
+          <img src={logo} id='logoMobile' width={158} height={33} />
+          <img src={window.innerWidth>1024 ? womanImageDesk : womanImageMobile} id='womanImg' />
         </div>
       </div>
     </>
